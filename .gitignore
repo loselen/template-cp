@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+# Quarto / LaTeX build intermediates (trd.qmd and trd.pdf are committed)
+reference/trd.tex
+reference/trd.log
+reference/trd_files/
+reference/.quarto/
+.quarto/
