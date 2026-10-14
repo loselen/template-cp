@@ -58,6 +58,10 @@ format:
 
 # 00  Core: template, I/O, recursion, testing
 
+```python
+# Python 3 stdlib only, PyPy-friendly.
+```
+
 ## 1.2 Choosing a language: Python performance notes
 
 ```python
@@ -295,6 +299,7 @@ def stress(solve, brute, gen, iters=1000, seed=0):
 # 01  Techniques: search, greedy, offline, heuristics
 
 ```python
+# Python 3 stdlib only, PyPy-friendly.
 import random, math, heapq
 from bisect import bisect_right
 from collections import deque
@@ -1358,6 +1363,7 @@ class FuncGraph:
 # 02  Data structures
 
 ```python
+# Python 3 stdlib only, PyPy-friendly. Indices 0-based, ranges half-open [l, r) unless noted.
 import math
 import random
 from bisect import bisect_left, bisect_right, insort
@@ -2204,9 +2210,11 @@ def cartesian_tree(a):
 # 03  Dynamic programming
 
 ```python
+# Python 3 stdlib only, PyPy-friendly. Snippets are self-contained (imports listed at top).
 from bisect import bisect_left, bisect_right
 from collections import deque
 import heapq
+INF = float('inf')
 ```
 
 ## 5.1 Fundamentals: memoization vs tabulation
@@ -2987,10 +2995,13 @@ def min_cost_nondecreasing(a):
 # 04  Graphs
 
 ```python
+# Python 3 stdlib only, PyPy-friendly, NO recursion. Vertices 0..n-1.
+# Conventions: g[u] = [v, ...] (unweighted) or [(v, w), ...] (weighted); edges = [(u, v)] or [(u, v, w)].
 import random
 from heapq import heappush, heappop
 from collections import deque
 from itertools import combinations, permutations, product
+INF = float('inf')  # used by snippets below; ints compare fine against it
 ```
 
 ## 6.1 Graph basics
@@ -3799,7 +3810,9 @@ def prufer_decode(code):  # O(n) code -> edge list; #labeled trees = n^(n-2); de
 # 05  Flows and matching
 
 ```python
+# Python 3 stdlib only, PyPy-friendly, all iterative.
 from heapq import heappush, heappop
+INF = 1 << 60
 ```
 
 ## 6.8 Network Flow: max flow / min cut theorem
@@ -4402,6 +4415,11 @@ def matroid_intersection(n, ind1, ind2):
 
 # 06  Trees
 
+```python
+# HLD, centroid decomposition, virtual tree, isomorphism, long-path decomposition.
+# Python 3 stdlib only, PyPy-friendly, everything iterative. Trees: adj = list of lists, nodes 0..n-1.
+```
+
 ## 7.1 Tree basics: rooting (parent, depth, BFS order, subtree sizes)
 
 ```python
@@ -4976,6 +4994,8 @@ def dominant_indices(adj, root=0):
 # 07  Strings
 
 ```python
+# (SA-IS + doubling) + LCP, suffix automaton, eertree, Manacher, Lyndon/min rotation, classic problems.
+# Python 3 stdlib only, PyPy-friendly. Functions take str (most also work on lists of ints).
 import random
 ```
 
@@ -5668,6 +5688,7 @@ def periods(s):  # all periods p (s[i] == s[i+p]), increasing; includes n
 # 08  Number theory, combinatorics, games
 
 ```python
+# Python 3 stdlib only, PyPy-friendly. Matrices/Gauss/NTT/GF ops/Lagrange/BM -> 09_algebra_poly.py.
 import random
 from math import gcd, isqrt, comb, factorial
 from functools import lru_cache
@@ -6635,8 +6656,10 @@ def floor_sum(n, m, a, b):  # sum_{i=0}^{n-1} floor((a*i+b)/m), m>0, any sign a,
 # 09  Linear algebra and polynomials
 
 ```python
+# Python 3 stdlib only. All poly code goes through ONE convolve().
 from operator import mul
 import decimal
+MOD = 998244353
 ```
 
 ## 9.4 Linear Algebra: matrix multiply / power
@@ -7344,6 +7367,9 @@ def linrec_kth(c, a, k, mod=MOD):
 # 10  Geometry
 
 ```python
+# Points are tuples (x, y). Integer inputs -> exact predicates (cross/dot/area2).
+# Alternative: complex numbers (p.real, p.imag; cross = (a.conjugate()*b).imag) -- not used here.
+# For exact intersection points pass fractions.Fraction coordinates (all '/' below then stay exact).
 import math
 import random
 from bisect import bisect_left, bisect_right, insort

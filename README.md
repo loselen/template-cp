@@ -5,6 +5,7 @@
 A competitive programming reference library in **Python 3 / PyPy**, plus a printable 25-page ICPC team reference document (TRD).
 
 - 📄 **[`reference/trd.pdf`](reference/trd.pdf)**: the TRD. It is A4, has 25 pages, and puts the university name top-left and the page number top-right on every page.
+- 🤖 **[`reference/trd.md`](reference/trd.md)**: the same reference as one plain Markdown file with no page limit, for AI assistants and searching. It has normal formatting, the full code (tests omitted), and the complete topic map and cheat sheet. CI checks that it passes every self-test.
 - 🗺️ **[`reference/README.md`](reference/README.md)**: maps each topic to the file that covers it, plus a cheat sheet of theorems, Python performance tips, debugging, and contest strategy.
 - 📋 **[`competitive-programming-topics.md`](competitive-programming-topics.md)**: the topic list this library covers.
 
@@ -46,7 +47,7 @@ cd reference
 python3 build_trd.py --university "Your University" --team "Team Name"
 ```
 
-The script generates `trd.qmd` from the `.py` files, leaving out the test blocks. It renders the PDF with xelatex, using 4 columns and syntax highlighting, and fails if the result exceeds 25 pages. Edit the `.py` files, not `trd.qmd`, which is overwritten on each build.
+The script generates `trd.qmd` and `trd.md` from the `.py` files, leaving out the test blocks. It renders the PDF with xelatex, using 4 columns and syntax highlighting, and fails if the result exceeds 25 pages. Edit the `.py` files, not `trd.qmd`/`trd.md`, which are overwritten on each build. Use `--no-render` to regenerate only `trd.qmd` and `trd.md` (no Quarto needed). `--check` verifies that `trd.md` is up to date and that its code passes every file's tests.
 
 ## License
 

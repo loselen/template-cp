@@ -13,3 +13,5 @@ jobs:
         with:
           python-version: "3.14"
       - run: ./reference/run_tests.sh
+      - name: trd.md is current and passes every self-test
+        run: python3 reference/build_trd.py --check

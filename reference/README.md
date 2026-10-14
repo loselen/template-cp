@@ -7,7 +7,7 @@ Topics that aren't code (concepts, strategy, theorems) are in this README or in 
 Every `.py` file is self-testing. `python3 <file>` checks each snippet against a brute force and prints `ALL OK`.
 Run all of them with `./run_tests.sh`.
 
-The printable ICPC team reference document is `trd.pdf` (25 pages, A4). It is built from these files with `python3 build_trd.py --university "Your University"`, which needs Quarto and a LaTeX distribution (TinyTeX works).
+The printable ICPC team reference document is `trd.pdf` (25 pages, A4). It is built from these files with `python3 build_trd.py --university "Your University"`, which needs Quarto and a LaTeX distribution (TinyTeX works). The same build writes `trd.md`, a plain Markdown edition with no page limit, for AI assistants.
 
 ## File map (topic section → file)
 
